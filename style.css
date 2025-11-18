@@ -117,7 +117,7 @@ body {
 .op-btn {
     background-color: white;
     color: black;
-    background-color: #E5EDFF;
+    background-color: var(--bg-skyblue);
 }
 .op-btn:hover {
     border: 1px solid var(--primary-color) ;
@@ -127,7 +127,7 @@ body {
 .func-btn {
     background-color: white;
     color: black;
-    background-color: #E5EDFF;
+    background-color: var(--bg-skyblue);
     font-size: 1rem;
 }
 .func-btn:hover {
