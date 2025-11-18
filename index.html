@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="calculator-interface">
+        <h1 class="title">Scientific Calculator</h1>
+        <div class="display">
+          <div id="output-display" class="output">Output</div>
+          <input
+            type="text"
+            id="expression-input"
+            class="input"
+            placeholder="Enter expression..."
+            value=""
+            autocomplete="off"
+          />
+        </div>
+        <div id="calculator-grid" class="button-grid">
+          <button class="calc-btn func-btn" data-value="sin(">sin</button>
+          <button class="calc-btn func-btn" data-value="cos(">cos</button>
+          <button class="calc-btn func-btn" data-value="tan(">tan</button>
+          <button class="calc-btn func-btn" data-value="sqrt(">sqrt</button>
+
+          <button class="calc-btn func-btn" data-value="pi">π</button>
+          <button class="calc-btn func-btn" data-value="e">e</button>
+          <button class="calc-btn clear-btn" data-value="clear">C</button>
+          <button class="calc-btn clear-btn" data-value="backspace">←</button>
+
+          <button class="calc-btn op-btn" data-value="(">(</button>
+          <button class="calc-btn op-btn" data-value=")">)</button>
+          <button class="calc-btn op-btn" data-value="^">^</button>
+          <button class="calc-btn op-btn" data-value="/">/</button>
+
+          <button class="calc-btn main-btn" data-value="7">7</button>
+          <button class="calc-btn main-btn" data-value="8">8</button>
+          <button class="calc-btn main-btn" data-value="9">9</button>
+          <button class="calc-btn op-btn" data-value="*">*</button>
+
+          <button class="calc-btn main-btn" data-value="4">4</button>
+          <button class="calc-btn main-btn" data-value="5">5</button>
+          <button class="calc-btn main-btn" data-value="6">6</button>
+          <button class="calc-btn op-btn" data-value="-">-</button>
+
+          <button class="calc-btn main-btn" data-value="1">1</button>
+          <button class="calc-btn main-btn" data-value="2">2</button>
+          <button class="calc-btn main-btn" data-value="3">3</button>
+          <button class="calc-btn op-btn" data-value="+">+</button>
+
+          <button
+            class="calc-btn main-btn"
+            data-value="0"
+            style="grid-column: span 1"
+          >
+            0
+          </button>
+          <button class="calc-btn main-btn" data-value=".">.</button>
+          <button
+            class="calc-btn eq-btn"
+            data-value="calculate"
+            style="grid-column: span 2"
+          >
+            =
+          </button>
+        </div>
+      </div>
+
+      <div class="side-panel">
+        <div class="panel-section">
+          <h2 class="panel-title">Variables (Scope)</h2>
+          <div id="variables-list" class="list-container"></div>
+          <div class="var-input-group">
+            <input
+              type="text"
+              id="var-name"
+              class="var-input"
+              placeholder="Name (e.g. x)"
+            />
+            <input
+              type="number"
+              id="var-value"
+              class="var-input"
+              placeholder="Value"
+            />
+            <button id="add-var-btn" class="add-var-btn">Add</button>
+          </div>
+          <p id="var-error" class="error-message" style="display: none">
+            Error message
+          </p>
+        </div>
+
+        <div class="panel-section">
+          <h2 class="panel-title">History</h2>
+          <div id="history-list" class="list-container history-list">
+            <p class="loading-text">History...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
