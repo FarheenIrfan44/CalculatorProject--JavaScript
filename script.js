@@ -51,17 +51,14 @@ class Calculator {
       processedExpression = processedExpression.replace(regex, value);
     }
 
-    processedExpression = processedExpression
-      .replace(/\^/g, "**")
-      .replace(/sqrt\s*\(/g, "Math.sqrt(")
-      .replace(/sin\s*\(/g, "Math.sin(")
-      .replace(/cos\s*\(/g, "Math.cos(")
-      .replace(/tan\s*\(/g, "Math.tan(")
-      .replace(/(\d)\s*\(/g, "$1*(")
-      .replace(/\)\s*(\d)/g, ")*$1")
-      .replace(/([a-zA-Z])\s*\(/g, "$1*(")
-      .replace(/\)\s*([a-zA-Z])/g, ")*$1")
-      .replace(/\)\s*\(/g, ")*(");
+   processedExpression = processedExpression
+    .replace(/\^/g, "**") 
+   
+    
+    .replace(/sqrt\s*\(/g, "Math.sqrt(")
+    .replace(/sin\s*\(/g, "Math.sin(")
+    .replace(/cos\s*\(/g, "Math.cos(")
+    .replace(/tan\s*\(/g, "Math.tan(");
 
     console.log(`I am expression after processig ${processedExpression}`);
 
@@ -167,7 +164,7 @@ class Calculator {
       this.varErrorDisplay.textContent = "Valid value is required for variable";
       this.varErrorDisplay.style.display = "block";
       return;
-    } else if (this.userVariables.hasOwnProperty(varName)) {
+    } else if (this.userVariables.hasOwnProperty(varName) || this.constants.hasOwnProperty(varName)) {
       this.varErrorDisplay.textContent = `Cannot use reserved name: '${varName}'`;
       this.varErrorDisplay.style.display = "block";
       return;
@@ -240,7 +237,6 @@ class Calculator {
                 <div class="var-list-item">
                     <span class="var-name" data-name="${name}">${name}</span>
                     <span>${value.toFixed(4)}</span>
-                     <span class="text-xs" style="color: var(--primary-color);">(Constant)</span>
                 </div>
             `;
     });
